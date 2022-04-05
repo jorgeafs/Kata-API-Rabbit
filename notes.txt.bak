@@ -1,0 +1,22 @@
+microservice ---> talking to each other through rabbitmq
+ if posible dockerizate it
+ 
+ 
+ -------------------------------------------------------
+Solution Name
+	AsyncCommsExample
+	
+Projects Name
+	AsyncComms.ApiGateway(WebApi)
+	AsyncComms.ApiGateway.BusinessLogic (dll) 
+	AsyncComms.ApiGateway.BusinessLogic.Tests (nunit)
+	AsyncComms.Messaging(dll)--> could be run as a console
+	AsyncComms.Worker(WebApi)
+	AsyncComms.Worker.BusinessLogic (dll) 
+	AsyncComms.Worker.BusinessLogic.Tests (nunit)
+	
+	
+	
+dotnet new webapp -n "AsyncComms.ApiGateway" 
+
+git commit -m "{message here}"
