@@ -18,5 +18,12 @@ Projects Name
 	
 	
 dotnet new webapp -n "AsyncComms.ApiGateway" 
+dotnet new classlib -n "AsyncComms.ApiGateway.BusinessLogic" 
+dotnet new nunit -n "AsyncComms.ApiGateway.BusinessLogic.Tests" 
+dotnet new classlib -n "AsyncComms.Messaging" 
+dotnet new webapp -n "AsyncComms.Worker" 
+dotnet new classlib -n "AsyncComms.Worker.BusinessLogic" 
+dotnet new nunit -n "AsyncComms.Worker.BusinessLogic.Tests"  
+
 
 git commit -m "{message here}"
