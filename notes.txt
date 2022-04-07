@@ -27,3 +27,9 @@ dotnet new nunit -n "AsyncComms.Worker.BusinessLogic.Tests"
 
 
 git commit -m "{message here}"
+
+After adding 
+git rm --cached .
+git add .
+git status
+
