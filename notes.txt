@@ -33,3 +33,12 @@ git rm --cached .
 git add .
 git status
 
+
+----------------------------------------------------------
+WebAPI receive a call --> send message to rabbitmq --> read it back 
+
+we create a queue per received message so it will be creating when send and delete as soon as it is read (Queue in demand) the queue will be deleted when all the connection are closed
+
+routing key --> GIC subscription --> message bus --> the message is routed depending on rules setup on advance (body, header,...)
+
+
