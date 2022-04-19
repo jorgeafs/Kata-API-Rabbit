@@ -42,3 +42,11 @@ we create a queue per received message so it will be creating when send and dele
 routing key --> GIC subscription --> message bus --> the message is routed depending on rules setup on advance (body, header,...)
 
 
+
+
+sender									receiver
+created a 								asking rabbitmq if there are queue? -->
+
+
+
+

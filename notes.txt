@@ -50,3 +50,4 @@ created a 								asking rabbitmq if there are queue? -->
 
 
 
+try to get the communication from the web api to the worker as a console app to display 

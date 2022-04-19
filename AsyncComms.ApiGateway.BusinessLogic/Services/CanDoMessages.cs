@@ -5,36 +5,21 @@ namespace AsyncComms.ApiGateway.BusinessLogic.Services
 {
     public class CanDoMessages : ICanDoMessages
     {
-        private List<string> _messages = new() { "value1", "value2" };
+        private readonly IMessaging _messages;
 
-        public CanDoMessages(IMessaging )
+        public CanDoMessages(IMessaging messaging)
         {
-            
+            _messages = messaging;
         }
 
-        public IEnumerable<string> GetAll(int pageNumber, int pageSize)
+        public string Get(string queueId)
         {
-            return _messages.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+            return _messages.ReceiveOne(queueId);
         }
 
-        public string Get(int index)
+        public void Post(string queueId, string message)
         {
-            return _messages[index];
-        }
-
-        public void Post(string message)
-        {
-            _messages.Add(message);
-        }
-
-        public void Put(int index, string message)
-        {
-            _messages[index] = message;
-        }
-
-        public void Delete(int index)
-        {
-            _messages.Remove(_messages[index]);
+            _messages.SendSingleMessage(message,queueId);
         }
     }
 }

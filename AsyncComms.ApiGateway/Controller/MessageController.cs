@@ -10,39 +10,19 @@
         {
             _canDoMessages = canDoMessages ?? throw new ArgumentNullException(typeof(ICanDoMessages).ToString());
         }
-        // GET: api/<MessageController>
-        [HttpGet("{pageNumber}/{pageSize}")]
-        public IEnumerable<string> GetAll(int pageNumber,int pageSize)
-        {
-            return _canDoMessages.GetAll(pageNumber, pageSize);
-        }
-
+        
         // GET api/<MessageController>/5
-        [HttpGet("{index}")]
-        public string Get(int index)
+        [HttpGet("{queueId}")]
+        public string Get(string queueId)
         {
-            return _canDoMessages.Get(index);
+            return _canDoMessages.Get(queueId);
         }
 
         // POST api/<MessageController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string value, [FromBody] string queueId)
         {
-            _canDoMessages.Post(value);
-        }
-
-        // PUT api/<MessageController>/5
-        [HttpPut("{index}")]
-        public void Put(int index, [FromBody] string value)
-        {
-            _canDoMessages.Put(index,value);
-        }
-
-        // DELETE api/<MessageController>/5
-        [HttpDelete("{index}")]
-        public void Delete(int index)
-        {
-            _canDoMessages.Delete(index);
+            _canDoMessages.Post(queueId, value);
         }
     }
 }

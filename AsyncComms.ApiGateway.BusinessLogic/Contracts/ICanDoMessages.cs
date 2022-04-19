@@ -8,10 +8,7 @@ namespace AsyncComms.ApiGateway.BusinessLogic.Contracts
 {
     public interface ICanDoMessages
     {
-        public IEnumerable<string> GetAll(int pageNumber, int pageSize);
-        public string Get(int index);
-        public void Post(string message);
-        public void Put(int index, string message);
-        public void Delete(int index);
+        public string Get(string queueId);
+        public void Post(string queueId, string message);
     }
 }
